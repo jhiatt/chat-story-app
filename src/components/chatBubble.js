@@ -3,18 +3,13 @@ import React from 'react';
 class ChatBubble extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
-
-        this.handleChange = this.handleChange.bind(this);
+        this.state = {value: this.props.value};
     }
 
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
 
     render() {
         return (
-            <h1>Hello</h1>
+        <h1>{this.state.value}</h1>
         )
     }
 }

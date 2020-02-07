@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ChatBubble from './chatBubble';
 
 class UserChatBubble extends React.Component {
     constructor(props) {
@@ -20,9 +21,8 @@ class UserChatBubble extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <h1>
-                    {this.state.value}
-                </h1>
+                <ChatBubble value={this.state.value} />
+                {/* Why isn't this working? ^^^^ This isn't updating after we load (useEffect?)*/}
                 <form onSubmit={this.handleSubmit} >
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />
