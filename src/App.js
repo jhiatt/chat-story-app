@@ -2,12 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ChatBubble from './components/chatBubble';
+import UserChatBubble from './components/userChatBubble';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <ChatBubble />
+        <UserChatBubble />
         {/* <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
