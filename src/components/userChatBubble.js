@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import ChatBubble from './chatBubble';
+import React from 'react';
+
 
 class UserChatBubble extends React.Component {
     constructor(props) {
@@ -16,13 +16,16 @@ class UserChatBubble extends React.Component {
     handleSubmit(event) {
         alert(this.state.value);
         event.preventDefault();
+        // need this to return a component
     }
 
     render() {
         return (
             <React.Fragment>
-                <ChatBubble value={this.state.value} />
-                {/* Why isn't this working? ^^^^ This isn't updating after we load (useEffect?)*/}
+                <div >
+                    {this.state.value}
+                </div>
+                {/* This needs the same class as chatbubble*/}
                 <form onSubmit={this.handleSubmit} >
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />

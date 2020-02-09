@@ -1,5 +1,6 @@
 import React from 'react';
 
+// This will be used to manage buble design and behavior
 class ChatBubble extends React.Component {
     constructor(props) {
         super(props);
