@@ -1,4 +1,6 @@
 import React from 'react';
+import ChatText from './chatText';
+import ChatBubble from './chatBubble';
 
 
 class UserChatBubble extends React.Component {
@@ -8,20 +10,29 @@ class UserChatBubble extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.saveTextbubble = this.saveTextbubble.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
     handleSubmit(event) {
-        alert(this.state.value);
+        // <ChatText >
+        //     <ChatBubble value={this.state.value} />;
+        // </ChatText>
         event.preventDefault();
         // need this to return a component
+    }
+
+
+    saveTextbubble(text) {
+        // Pass down to componant
     }
 
     render() {
         return (
             <React.Fragment>
+                <ChatText />
                 <div >
                     {this.state.value}
                 </div>

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <ChatText />
+        {/* <ChatText /> */}
         <UserChatBubble />
        
       </header>
@@ -16,3 +16,9 @@ function App() {
 }
 
 export default App;
+
+
+// app.js
+//  chattext
+//  chat bubble
+//    chattext

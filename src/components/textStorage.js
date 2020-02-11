@@ -11,3 +11,8 @@ var post3 = "a;ldkfjalsk;djflksajdf"
 
 export {post1, post2, post3};
 // export default allPosts
+
+
+
+// need to get data from text file and newly added stuff into the same array
+// add stuff from submit to array
