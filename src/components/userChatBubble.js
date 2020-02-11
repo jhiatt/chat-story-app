@@ -1,38 +1,41 @@
 import React from 'react';
 import ChatText from './chatText';
 import ChatBubble from './chatBubble';
+import {post1, post2, post3} from './textStorage';
 
 
 class UserChatBubble extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            texts: [post1, post2, post3]
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.saveTextbubble = this.saveTextbubble.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
     handleSubmit(event) {
-        // <ChatText >
-        //     <ChatBubble value={this.state.value} />;
-        // </ChatText>
+        this.setState({texts: [...this.state.texts, this.state.value ] });
+        this.setState({value: ''});
         event.preventDefault();
         // need this to return a component
     }
 
-
-    saveTextbubble(text) {
-        // Pass down to componant
-    }
-
     render() {
+        const bubbledItems = this.state.texts.map((item) =>
+            <ChatBubble value={item} />
+        );
+
         return (
             <React.Fragment>
-                <ChatText />
+                <ChatText >
+                    {bubbledItems}
+                </ChatText>
                 <div >
                     {this.state.value}
                 </div>

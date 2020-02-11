@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import UserChatBubble from './components/userChatBubble';
-import ChatText from './components/chatText';
 
 function App() {
   return (
