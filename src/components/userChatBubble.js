@@ -1,7 +1,7 @@
 import React from 'react';
 import ChatText from './chatText';
 import ChatBubble from './chatBubble';
-import {post1, post2, post3} from './textStorage';
+import allPosts from './textStorage';
 
 
 class UserChatBubble extends React.Component {
@@ -9,27 +9,45 @@ class UserChatBubble extends React.Component {
         super(props);
         this.state = {
             value: '',
-            texts: [post1, post2, post3]
+            texts: [],
+            textsCounter: -1,
+            posts: allPosts,
+            intervals: [1000,2000,3000,5000,10000,15000]
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.randomPost = this.randomPost.bind(this);
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
     }
     handleSubmit(event) {
-        this.setState({texts: [...this.state.texts, this.state.value ] });
+        let newChat = {
+            userName: "Me",
+            message: this.state.value,
+            myMessage: true
+        }
+        this.setState({texts: [...this.state.texts, newChat ] });
         this.setState({value: ''});
         event.preventDefault();
-        // need this to return a component
+    }
+
+    randomPost() {
+        this.setState({textsCounter: this.state.textsCounter + 1});
+        this.setState({texts: [...this.state.texts, this.state.posts[this.state.textsCounter] ] });
+        // setTimeout(this.randomPost, this.state.intervals[Math.floor(Math.random() * this.state.intervals.length)]);
     }
 
     render() {
-        const bubbledItems = this.state.texts.map((item) =>
-            <ChatBubble value={item} />
+        const bubbledItems = this.state.texts.map((item, index) =>
+            <ChatBubble message={item.message} userName={item.userName} key={index} />
         );
+
+        if (this.state.textsCounter === -1) {
+            setTimeout(this.randomPost, 2000);
+        }
 
         return (
             <React.Fragment>

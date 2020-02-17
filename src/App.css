@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.bubble-color1 {
+  border-color: #61dafb;
+  border-style: solid;
+}
+
+.chat-bubble {
+  border-style: solid;
+  border-radius: 50%;
+  padding: 100em;
+}
+
+.my-message {
+  text-align: right;
+}
