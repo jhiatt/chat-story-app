@@ -37,12 +37,14 @@ class UserChatBubble extends React.Component {
     randomPost() {
         this.setState({textsCounter: this.state.textsCounter + 1});
         this.setState({texts: [...this.state.texts, this.state.posts[this.state.textsCounter] ] });
-        // setTimeout(this.randomPost, this.state.intervals[Math.floor(Math.random() * this.state.intervals.length)]);
+        if (this.state.texts.length !== this.state.posts.length) {
+            setTimeout(this.randomPost, this.state.intervals[Math.floor(Math.random() * this.state.intervals.length)]);
+        }
     }
 
     render() {
         const bubbledItems = this.state.texts.map((item, index) =>
-            <ChatBubble message={item.message} userName={item.userName} key={index} />
+            <ChatBubble message={item.message} userName={item.userName} messageIndex={index} />
         );
 
         if (this.state.textsCounter === -1) {
@@ -54,7 +56,7 @@ class UserChatBubble extends React.Component {
                 <ChatText >
                     {bubbledItems}
                 </ChatText>
-                <div >
+                <div >  
                     {this.state.value}
                 </div>
                 {/* This needs the same class as chatbubble*/}

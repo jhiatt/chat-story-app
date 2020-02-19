@@ -11,7 +11,7 @@ class ChatBubble extends React.Component {
     render() {
 
         return (
-            <div className={(this.props.myMessage) ? "my-message" : "" } key={this.props.key} >
+            <div className={(this.props.myMessage) ? "my-message" : "" } key={this.props.messageIndex} >
                 <p>{this.props.userName}: {this.props.message}</p>
             </div>
         )
