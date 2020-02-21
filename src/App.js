@@ -1,14 +1,16 @@
 import React from 'react';
 import './App.css';
 import UserChatBubble from './components/userChatBubble';
+import Navigation from './components/navBar'
+
 
 function App() {
   return (
     <div className="App">
+      <Navigation />
       <header className="App-header">
-        {/* <ChatText /> */}
-        <UserChatBubble />
        
+        <UserChatBubble />
       </header>
     </div>
   );
