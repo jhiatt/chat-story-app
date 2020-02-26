@@ -37,7 +37,7 @@ class UserChatBubble extends React.Component {
     randomPost() {
         this.setState({textsCounter: this.state.textsCounter + 1});
         this.setState({texts: [...this.state.texts, this.state.posts[this.state.textsCounter] ] });
-        if (this.state.texts.length !== this.state.posts.length) {
+        if ((this.state.textsCounter + 1) < this.state.posts.length) {
             setTimeout(this.randomPost, this.state.intervals[Math.floor(Math.random() * this.state.intervals.length)]);
         }
     }
