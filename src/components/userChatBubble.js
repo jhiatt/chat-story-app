@@ -44,7 +44,7 @@ class UserChatBubble extends React.Component {
 
     render() {
         const bubbledItems = this.state.texts.map((item, index) =>
-            <ChatBubble message={item.message} userName={item.userName} messageIndex={index} />
+            <ChatBubble message={item.message} userName={item.userName} key={index} />
         );
 
         if (this.state.textsCounter === -1) {
@@ -60,7 +60,7 @@ class UserChatBubble extends React.Component {
                     {this.state.value}
                 </div>
                 {/* This needs the same class as chatbubble*/}
-                <form onSubmit={this.handleSubmit} >
+                <form onSubmit={this.handleSubmit} className="chat-submit" >
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />
                 </form>
