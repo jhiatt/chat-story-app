@@ -1,10 +1,10 @@
 
 let allPosts = [
     {
-        userName: "Marco", message: "Hey, I'm Marco", myMessage: false
+        userName: "Marco", message: "Hey, I'm Marco"
     },
     {
-        userName: "Jonny", message: "Hey, I'm Jonny", myMessage: false
+        userName: "Jonny", message: "Hey, I'm Jonny"
     }
 ];
 

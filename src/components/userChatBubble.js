@@ -27,8 +27,7 @@ class UserChatBubble extends React.Component {
         let newChat = {
             userName: "Me",
             message: this.state.value,
-            myMessage: true
-        }
+        };
         this.setState({texts: [...this.state.texts, newChat ] });
         this.setState({value: ''});
         event.preventDefault();
@@ -56,10 +55,6 @@ class UserChatBubble extends React.Component {
                 <ChatText >
                     {bubbledItems}
                 </ChatText>
-                <div >  
-                    {this.state.value}
-                </div>
-                {/* This needs the same class as chatbubble*/}
                 <form onSubmit={this.handleSubmit} className="chat-submit" >
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />
