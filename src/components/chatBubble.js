@@ -6,17 +6,23 @@ class ChatBubble extends React.Component {
 // Cannot get my message class to attach, cannot get key working.
 
     render() {
-        let message;
-
-        if (this.props.userName === "Me") {
-            message = <div className="my-message" >
-                <p>{this.props.userName}: {this.props.message}</p>
-            </div>
+        let classNameUsed
+        if (this.props.userSubmitted) {
+            classNameUsed = "my-message message"
+        } else if (this.props.ai) {
+            classNameUsed = "auto-message message ai"
         } else {
-            message = <div className="auto-message">
-                <p>{this.props.userName}: {this.props.message}</p>
-            </div>
+            classNameUsed = "auto-message message"
         }
+
+        let message = <div className={classNameUsed} >
+                <p>
+                    <span className="user-name">{this.props.userName}:</span>
+                    {this.props.message}
+                </p>
+                <p className="time-stamp">{this.props.time.toString()}</p>
+            </div>
+
 
         return (
             <React.Fragment>

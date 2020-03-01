@@ -12,8 +12,10 @@ class ChatText extends React.Component {
     render() {
         
         return(
-            <div>
+            <div id="chat-group">
+                <div id="first-div" />
                 {this.props.children}
+                <div id="last-div" />
             </div>
         ) 
     }
