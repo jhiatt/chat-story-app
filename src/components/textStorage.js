@@ -86,10 +86,10 @@ let allPosts = [
         userName: user7, message: "You’ve got Despair going? I’m in."
     },
     {
-        userName: user10, message: "Hey have you guys seen [User 5]?  He said he was fixing the rebooting the Central AI, but he didn’t and I haven’t seen him."
+        userName: user10, message: "Hey have you guys seen " + user5 + "?  He said he was fixing the rebooting the Central AI, but he didn’t and I haven’t seen him."
     },
     {
-        userName: user5, message: "Oh hey [User 10], I stopped by the breakroom.  Can you come on over and we can get this running together?"
+        userName: user5, message: "Oh hey " + user10 + ", I stopped by the breakroom.  Can you come on over and we can get this running together?"
     },
     {
         userName: user10, message: "Sure just let me wrap this up."
@@ -110,7 +110,7 @@ let allPosts = [
         userName: user10, message: "Give me a minute"
     },
     {
-        userName: user12, message: "Hold on, [User 1], you can’t bake.  You can’t make cereal."
+        userName: user12, message: "Hold on, " + user1 + ", you can’t bake.  You can’t make cereal."
     },
     {
         userName: user7, message: "You guys this game needs a few more people.  Any joiners?"
@@ -119,7 +119,7 @@ let allPosts = [
         userName: user11, message: "All my meetings got moved to room 115"
     },
     {
-        userName: user11, message: "Uhhhh [User 10], does AI control the chat room?"
+        userName: user11, message: "Uhhhh " + user10 + ", does AI control the chat room?"
     },
     {
         userName: user10, message: "No it’s a completely different server."

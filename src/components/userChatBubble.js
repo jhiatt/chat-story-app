@@ -28,6 +28,7 @@ class UserChatBubble extends React.Component {
         let newChat = {
             userName: "Me",
             message: this.state.value,
+            time: Date(Date.now),
             userSubmitted: true
         };
         this.setState({texts: [...this.state.texts, newChat ] });
