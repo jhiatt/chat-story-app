@@ -3,8 +3,6 @@ import React from 'react';
 // This will be used to manage buble design and behavior
 class ChatBubble extends React.Component {
 
-// Cannot get my message class to attach, cannot get key working.
-
     render() {
         let classNameUsed
         if (this.props.userSubmitted) {
