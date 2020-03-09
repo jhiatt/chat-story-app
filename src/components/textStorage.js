@@ -1,3 +1,7 @@
+//improve names
+//add in ai tags
+//add an ending
+
 let user1 = "Jeremy";
 let user2 = "Sam";
 let user3 = "Paul";

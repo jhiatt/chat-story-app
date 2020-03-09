@@ -11,42 +11,82 @@
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-left: 120px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
+/* Navigation */
+.side-nav {
+  height: 100%;
+  width: 120px;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  text-align: left;
+}
+
+
+
 .top-nav {
   position: fixed;
   width: 100%;
 }
 
-.bubble-color1 {
-  border-color: #61dafb;
-  border-style: solid;
-}
-
-.chat-bubble {
-  border-style: solid;
-  border-radius: 50%;
-  padding: 100em; 
-}
-
-
-.side-nav {
-  height: 100%;
-  float: left;
-  text-align: left;
-}
 
 .chat-submit {
   position: fixed;
   bottom: 0px;
   width: 100%;
   background-color: aliceblue;
-
 }
+
+
+.thread {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  margin-bottom: 15px;;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+/* .thread .unread {
+  position: absolute;
+  right: 0px;
+  top: 5px;
+  z-index: 10;
+
+  background-color: #ed2324;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  padding: 5% 5%;
+  position: relative;
+  right: -5.8px;
+  top: -9px;
+  float: right;
+  display: block;
+}
+
+.unread .unread-count {
+  color: #fff;
+  font-size: 10px;
+  font-family: Arial, san-serif;
+  font-weight: bold;
+
+  position: relative;
+  display: block;
+  font: bold 14px/13px Helvetica, Verdana, Tahoma;
+  text-align: center;
+  margin: 0;
+  top: 2px;
+} */
 
 /* overall group of meesages */
 #chat-group {
@@ -71,6 +111,17 @@
 .user-name {
   padding-left: 5px;
 }
+
+/* .bubble-color1 {
+  border-color: #61dafb;
+  border-style: solid;
+}
+
+.chat-bubble {
+  border-style: solid;
+  border-radius: 50%;
+  padding: 100em; 
+} */
 
 /* user submitted messages */
 .my-message {

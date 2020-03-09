@@ -13,12 +13,16 @@ class ChatBubble extends React.Component {
             classNameUsed = "auto-message message"
         }
 
+        let FullCurrentTime = this.props.time.toString();
+        let x = FullCurrentTime.indexOf("GMT");
+        let currentTime = FullCurrentTime.substring(x-9,x-4);
+
         let message = <div className={classNameUsed} >
                 <p>
                     <span className="user-name">{this.props.userName}:</span>
                     {this.props.message}
                 </p>
-                <p className="time-stamp">{this.props.time.toString()}</p>
+                <p className="time-stamp">Sent: {currentTime}</p>
             </div>
 
 
