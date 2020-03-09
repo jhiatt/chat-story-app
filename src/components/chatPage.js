@@ -2,7 +2,12 @@ import React from 'react';
 import ChatDisplay from './chatDisplay';
 import ChatBubble from './chatBubble';
 import allPosts from './textStorage';
+import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 
+//To Do's:
+// Bubbled Items (state.texts) needs to show different chat streams
+// Need to create a chat stream for one user
+// How do we make this dry and optimize performance?
 
 class ChatPage extends React.Component {
     constructor(props) {
@@ -79,11 +84,30 @@ class ChatPage extends React.Component {
             <ChatBubble message={item.message} userName={item.userName} key={index} ai={item.ai} time={item.time} userSubmitted={item.userSubmitted} />
         );
 
+        const bubbledItemsUser1 = [{
+            message: "Want a cupcake?",
+            userName: "Jeremy",
+            time: Date(Date.now),
+            }].map((item, index) =>
+                <ChatBubble message={item.message} userName={item.userName} key={index} ai={item.ai} time={item.time} userSubmitted={item.userSubmitted} />
+        );
+
         return (
             <React.Fragment>
-                <ChatDisplay >
-                    {bubbledItems}
-                </ChatDisplay>
+                <BrowserRouter>
+                    <Switch>
+                        <Route exact path="/">
+                            <ChatDisplay >
+                                {bubbledItems}
+                            </ChatDisplay>
+                        </Route>
+                        <Route exact path="/Jeremy">
+                            <ChatDisplay >
+                                {bubbledItemsUser1}
+                            </ChatDisplay>
+                        </Route>
+                    </Switch>
+                </BrowserRouter>
                 <form onSubmit={this.handleSubmit} onClick={this.handleClick} className="chat-submit" id="test">
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />

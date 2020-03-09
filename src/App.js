@@ -4,7 +4,7 @@ import ChatPage from './components/chatPage';
 import Navigation from './components/navBar';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 // route should be determined within chat page, chat page can control the state for all pages
 
 class App extends React.Component {
@@ -28,7 +28,6 @@ class App extends React.Component {
     
     return (
       <div className="App">
-        <BrowserRouter>
           <Navigation unread={this.state.unreadGroup} />
           <header className="App-header">
             <Navbar bg="primary" variant="dark" expand="lg" className="top-nav" >
@@ -40,17 +39,9 @@ class App extends React.Component {
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
-            <Switch>
-              <Route exact path="/">
                 <ChatPage callUnread={this.unreadCallback} />
-              </Route>
-              <Route path="/Jeremy">
-                HI
-              </Route>
               <new ></new>
-            </Switch>
           </header>
-        </BrowserRouter>
       </div>
     );
   }
