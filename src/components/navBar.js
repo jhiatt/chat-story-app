@@ -1,14 +1,15 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import {Link} from 'react-router-dom';
 
 class Navigation extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Nav defaultActiveKey="/home" className="flex-column side-nav">
+                <Nav defaultActiveKey="/" className="flex-column side-nav">
                     <h6>Threads:</h6>
-                    <Nav.Link href="/home" className="thread"> 
+                    <Nav.Link href="/" className="thread"> 
                         <span>Team</span>
                         <span className="unread">
                             <div className="unread-count">
@@ -16,8 +17,7 @@ class Navigation extends React.Component {
                             </div>
                         </span>
                     </Nav.Link>
-                    <Nav.Link href="#" className="thread">
-
+                    <Nav.Link href="/Jeremy" className="thread">
                         <span>Jeremy</span>
                         <span className="unread">
                             <div className="unread-count">
