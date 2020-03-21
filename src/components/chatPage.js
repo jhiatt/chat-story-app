@@ -2,7 +2,7 @@ import React from 'react';
 import ChatDisplay from './chatDisplay';
 import ChatBubble from './chatBubble';
 import allPosts from './textStorage';
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 
 //To Do's:
 // Bubbled Items (state.texts) needs to show different chat streams

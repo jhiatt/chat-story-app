@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+// import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import {Link} from 'react-router-dom';
 
@@ -19,11 +19,11 @@ class Navigation extends React.Component {
                     </Link>
                     <Link to="/Jeremy" className="thread">
                         <span>Jeremy</span>
-                        <span className="unread">
-                            <div className="unread-count">
-                                unread: {this.props.unread} 
-                            </div>
-                        </span>
+                        {/* <span className="unread"> */}
+                            {/* <div className="unread-count"> */}
+                                {/* unread: {this.props.unread}  */}
+                            {/* </div>
+                        </span> */}
                     </Link>
                 </Nav>
                 
