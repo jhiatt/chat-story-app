@@ -11,7 +11,7 @@
   /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
-  padding-left: 120px;
+  padding-left: 240px;
 }
 
 .App-link {
@@ -21,7 +21,7 @@
 /* Navigation */
 .side-nav {
   height: 100%;
-  width: 120px;
+  width: 240px;
   position: fixed;
   z-index: 1;
   background-color: white;

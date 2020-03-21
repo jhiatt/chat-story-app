@@ -94,20 +94,18 @@ class ChatPage extends React.Component {
 
         return (
             <React.Fragment>
-                <BrowserRouter>
                     <Switch>
                         <Route exact path="/">
                             <ChatDisplay >
                                 {bubbledItems}
                             </ChatDisplay>
                         </Route>
-                        <Route exact path="/Jeremy">
+                        <Route path="/Jeremy">
                             <ChatDisplay >
                                 {bubbledItemsUser1}
                             </ChatDisplay>
                         </Route>
                     </Switch>
-                </BrowserRouter>
                 <form onSubmit={this.handleSubmit} onClick={this.handleClick} className="chat-submit" id="test">
                     <input value={this.state.value} onChange={this.handleChange} />
                     <input type="submit" value="enter" />

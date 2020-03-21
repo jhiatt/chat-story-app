@@ -1,13 +1,12 @@
 import React from 'react';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import {Link, BrowserRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Navigation extends React.Component {
     render() {
         return (
             <React.Fragment>
-                    <BrowserRouter className="flex-column side-nav">
                 <Nav defaultActiveKey="/" className="flex-column side-nav">
                     <h6>Threads:</h6>
                     <Link to="/" className="thread"> 
@@ -27,11 +26,10 @@ class Navigation extends React.Component {
                         </span>
                     </Link>
                 </Nav>
-                    </BrowserRouter>
                 
             </React.Fragment>
         );
     }
 }
-  
+  // nav.link
   export default Navigation;

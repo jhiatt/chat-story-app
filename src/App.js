@@ -27,7 +27,8 @@ class App extends React.Component {
   render() {
     
     return (
-      <div className="App">
+      <BrowserRouter>
+        <div className="App">
           <Navigation unread={this.state.unreadGroup} />
           <header className="App-header">
             <Navbar bg="primary" variant="dark" expand="lg" className="top-nav" >
@@ -42,7 +43,8 @@ class App extends React.Component {
                 <ChatPage callUnread={this.unreadCallback} />
               <new ></new>
           </header>
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }
